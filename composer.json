@@ -1,0 +1,46 @@
+{
+    "name": "wingman/explorer",
+    "type": "library",
+    "description": "A filesystem abstraction and I/O library for PHP applications, providing a unified interface for reading, writing, and transforming files across local and remote storage adapters including FTP, HTTP, S3, Azure, GCS, and SFTP. Requires Wingman Locator for path resolution and URI handling.",
+    "keywords": ["php", "filesystem", "io", "storage", "ftp", "s3", "azure", "gcs", "sftp", "adapters", "wingman"],
+    "license": "MPL-2.0",
+    "authors": [
+        {
+            "name": "Angel Politis",
+            "email": "info@angelpolitis.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "wingman/locator": ">=1.0"
+    },
+    "suggest": {
+        "wingman/cortex": "Enables configuration hydration via #[Configurable] attributes and Configuration::find().",
+        "wingman/corvus": "Enables signal emission on filesystem events (scan started/completed, errors).",
+        "wingman/console": "Required by the Explorer Console bridge (explorer:* commands).",
+        "wingman/synapse": "Required for the Synapse DI bridge (service providers and factories).",
+        "psr/http-message": "Required by Psr7StreamAdapter for PSR-7 stream interoperability.",
+        "symfony/yaml": "Enables YamlImporter and YamlExporter when the yaml extension is unavailable.",
+        "aws/aws-sdk-php": "Required by S3Adapter for Amazon S3 storage.",
+        "microsoft/azure-storage-blob": "Required by AzureAdapter for Azure Blob Storage.",
+        "google/cloud-storage": "Required by GCSAdapter for Google Cloud Storage.",
+        "ext-ftp": "Required by FTPAdapter.",
+        "ext-curl": "Required by HTTPAdapter.",
+        "ext-ssh2": "Required by SFTPAdapter.",
+        "ext-zip": "Required by ZipImporter and ZipExporter.",
+        "ext-zlib": "Required by GZipImporter and GZipExporter.",
+        "ext-yaml": "Enables YamlImporter and YamlExporter when symfony/yaml is unavailable."
+    },
+    "autoload": {
+        "psr-4": {
+            "Wingman\\Explorer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Wingman\\Explorer\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

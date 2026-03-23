@@ -1,0 +1,57 @@
+{
+    "name": "Wingman/Explorer",
+    "version": "1.0.0",
+    "type": "library",
+    "description": "A filesystem abstraction and I/O library for PHP applications. Provides a unified interface for reading, writing, moving, and transforming files across local and remote storage adapters (FTP, HTTP, S3, Azure Blob, GCS, SFTP). Features a negotiation-driven import/export pipeline supporting JSON, JSONL, CSV, INI, YAML, XML, plain text, GZip, Zip, and Tar formats; a flexible Scanner with depth, target, filter, and sort controls; atomic filesystem transactions with automatic rollback; virtual and generated file types; a streaming I/O layer; and Unix-style permission value objects. Integrates with Wingman Cortex for configuration hydration, Wingman Corvus for event emission, and Wingman Synapse for DI. Requires Wingman Locator for path resolution and URI handling.",
+    "authors": [
+        {
+            "name": "Angel Politis",
+            "email": "info@angelpolitis.com"
+        }
+    ],
+    "license": "MPL-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/angelpolitis/Wingman-Explorer.git"
+    },
+    "homepage": "https://github.com/angelpolitis/Wingman-Explorer",
+    "php": ">=8.1",
+    "dependencies": [
+        {
+            "package": "Wingman/Argus",
+            "version": ">=1.0",
+            "optional": true
+        },
+        {
+            "package": "Wingman/Console",
+            "version": ">=1.0",
+            "optional": true
+        },
+        {
+            "package": "Wingman/Cortex",
+            "version": ">=1.0",
+            "optional": true
+        },
+        {
+            "package": "Wingman/Corvus",
+            "version": ">=1.0",
+            "optional": true
+        },
+        {
+            "package": "Wingman/Locator",
+            "version": ">=1.0",
+            "optional": false
+        },
+        {
+            "package": "Wingman/Synapse",
+            "version": ">=1.0",
+            "optional": true
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Wingman.Explorer.": "src/",
+            "Wingman.Explorer.Tests.": "tests/"
+        }
+    }
+}
